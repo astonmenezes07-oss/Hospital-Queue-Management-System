@@ -1,0 +1,177 @@
+/* ===== Auth Pages ===== */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  padding-top: var(--topbar-height);
+}
+
+.auth-split {
+  display: flex;
+  flex: 1;
+}
+
+/* --- Left Branding Panel --- */
+.auth-branding {
+  flex: 1;
+  background: linear-gradient(135deg, var(--color-primary-700), var(--color-secondary-800));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-12);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+.auth-branding::before {
+  content: '';
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255,255,255,0.05), transparent);
+  border-radius: 50%;
+}
+.auth-branding::after {
+  content: '';
+  position: absolute;
+  bottom: -80px;
+  left: -80px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255,255,255,0.04), transparent);
+  border-radius: 50%;
+}
+.auth-branding-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 420px;
+}
+.auth-branding-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--radius-2xl);
+  background: rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-6);
+  backdrop-filter: blur(4px);
+}
+.auth-branding-icon svg { width: 40px; height: 40px; }
+.auth-branding h2 {
+  font-size: var(--font-size-3xl);
+  color: white;
+  margin-bottom: var(--space-4);
+}
+.auth-branding p {
+  color: rgba(255,255,255,0.75);
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-relaxed);
+}
+.auth-features-list {
+  margin-top: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  text-align: left;
+}
+.auth-feature-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--font-size-sm);
+  color: rgba(255,255,255,0.85);
+}
+.auth-feature-item svg { width: 18px; height: 18px; flex-shrink: 0; color: var(--color-primary-300); }
+
+/* --- Right Form Panel --- */
+.auth-form-panel {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-12) var(--space-8);
+  background: var(--bg-body);
+}
+.auth-form-container {
+  width: 100%;
+  max-width: 420px;
+}
+.auth-form-header {
+  margin-bottom: var(--space-8);
+}
+.auth-form-header h2 {
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--space-2);
+}
+.auth-form-header p {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+}
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+.auth-form-row {
+  display: flex;
+  gap: var(--space-4);
+}
+.auth-form-row > .form-group { flex: 1; }
+
+.auth-form-footer {
+  margin-top: var(--space-4);
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+}
+.auth-form-footer a {
+  color: var(--color-primary-600);
+  font-weight: var(--font-weight-medium);
+}
+
+/* --- Role Tabs --- */
+.role-tabs {
+  display: flex;
+  background: var(--color-gray-100);
+  border-radius: var(--radius-lg);
+  padding: 4px;
+  margin-bottom: var(--space-8);
+}
+.role-tab {
+  flex: 1;
+  padding: 10px 16px;
+  text-align: center;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-muted);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.role-tab:hover { color: var(--text-primary); }
+.role-tab.active {
+  background: var(--bg-surface);
+  color: var(--color-primary-600);
+  box-shadow: var(--shadow-sm);
+}
+
+/* --- Password Strength --- */
+.password-strength {
+  display: flex;
+  gap: 4px;
+  margin-top: var(--space-1);
+}
+.password-strength-bar {
+  flex: 1;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--color-gray-200);
+  transition: background var(--transition-fast);
+}
+.password-strength-bar.filled-weak { background: var(--color-danger-400); }
+.password-strength-bar.filled-medium { background: var(--color-warning-400); }
+.password-strength-bar.filled-strong { background: var(--color-success-400); }
